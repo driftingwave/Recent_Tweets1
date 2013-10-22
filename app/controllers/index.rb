@@ -17,5 +17,6 @@ post '/:username' do
   @user = TwitterUser.find_by_username(params[:username])
   @user.fetch_tweets!
   @tweets_all_info = @user.cached_tweets
-  erb :index, :layout => !request.xhr?
+  # erb :index, :layout => !request.xhr? ==> disables layout defaults
 end
+
